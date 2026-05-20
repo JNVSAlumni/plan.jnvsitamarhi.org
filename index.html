@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="myway — an interactive guide to higher-education streams, courses, entrance exams and careers for Indian students after Class 10." />
+  <meta name="theme-color" content="#6366f1" />
+  <title>myway — Your Career Path After 10th (India)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="myway — home">
+        <span class="brand-mark">my</span>
+        <span class="brand-text">myway <small>India <svg class="in-flag" viewBox="0 0 90 60" aria-label="India" role="img"><rect width="90" height="20" fill="#FF9933"/><rect y="20" width="90" height="20" fill="#fff"/><rect y="40" width="90" height="20" fill="#138808"/><g transform="translate(45 30)" stroke="#000080" stroke-width="0.5" fill="none"><circle r="7.5" stroke-width="0.8"/><circle r="1.4" fill="#000080" stroke="none"/><g stroke-width="0.45"><line y2="-7.5"/><line y2="-7.5" transform="rotate(15)"/><line y2="-7.5" transform="rotate(30)"/><line y2="-7.5" transform="rotate(45)"/><line y2="-7.5" transform="rotate(60)"/><line y2="-7.5" transform="rotate(75)"/><line y2="-7.5" transform="rotate(90)"/><line y2="-7.5" transform="rotate(105)"/><line y2="-7.5" transform="rotate(120)"/><line y2="-7.5" transform="rotate(135)"/><line y2="-7.5" transform="rotate(150)"/><line y2="-7.5" transform="rotate(165)"/><line y2="-7.5" transform="rotate(180)"/><line y2="-7.5" transform="rotate(195)"/><line y2="-7.5" transform="rotate(210)"/><line y2="-7.5" transform="rotate(225)"/><line y2="-7.5" transform="rotate(240)"/><line y2="-7.5" transform="rotate(255)"/><line y2="-7.5" transform="rotate(270)"/><line y2="-7.5" transform="rotate(285)"/><line y2="-7.5" transform="rotate(300)"/><line y2="-7.5" transform="rotate(315)"/><line y2="-7.5" transform="rotate(330)"/><line y2="-7.5" transform="rotate(345)"/></g></g></svg></small></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#streams" data-target="streams" data-primary>Streams</a>
+        <a href="#explorer" data-target="explorer" data-primary>Courses</a>
+        <a href="#exams" data-target="exams" data-primary>Exams</a>
+        <a href="#careers" data-target="careers" data-primary>Careers</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a href="#quiz" data-target="quiz" class="nav-util">Quiz</a>
+        <a href="#faq" data-target="faq" class="nav-util">FAQ</a>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="eyebrow">For Indian Students · Class X passed</span>
+      <h1>Plan your career <span class="grad">after Class 10</span>.</h1>
+      <p class="lede">
+        Explore every major higher-education stream, diploma, vocational track,
+        entrance exam and career open to you after Class 10 — verified data,
+        zero fluff.
+      </p>
+      <div class="hero-cta">
+        <a href="#streams" class="btn btn-primary">Explore Streams</a>
+        <a href="#quiz" class="btn btn-ghost">Take the Aptitude Quiz</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="statStreams">8</strong><span>Major Streams</span></div>
+        <div><strong id="statCareers">60+</strong><span>Careers Mapped</span></div>
+        <div><strong id="statExams">25+</strong><span>Entrance Exams</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAMS -->
+  <section id="streams" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Streams</span>
+        <h2>Pick a path after Class 10</h2>
+        <p>Three traditional Class 11–12 streams, plus diplomas, ITI, paramedical, design, defence and more. Click any card to dive deep.</p>
+      </header>
+      <div class="stream-grid" id="streamGrid"></div>
+    </div>
+  </section>
+
+  <!-- EXPLORER -->
+  <section id="explorer" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Explorer</span>
+        <h2>Find your course in seconds</h2>
+        <p>Search by name, filter by stream, duration or entrance — every result links to a full detail page.</p>
+      </header>
+
+      <div class="explorer-toolbar">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search a course, career or exam (e.g. NEET, CA, Animation, Polytechnic)…" />
+        </div>
+        <div class="filters">
+          <label>Stream
+            <select id="filterStream">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>Duration
+            <select id="filterDuration">
+              <option value="">Any</option>
+              <option value="short">≤ 2 years</option>
+              <option value="mid">3–4 years</option>
+              <option value="long">5+ years</option>
+            </select>
+          </label>
+          <label>Entrance Required
+            <select id="filterEntrance">
+              <option value="">Any</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+          <button id="resetFilters" class="btn btn-ghost btn-sm">Reset</button>
+        </div>
+      </div>
+
+      <div id="courseGrid" class="course-grid"></div>
+      <p id="noResults" class="no-results" hidden>No courses match your filters.</p>
+    </div>
+  </section>
+
+  <!-- ENTRANCE EXAMS -->
+  <section id="exams" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Entrance Exams</span>
+        <h2>The 25 exams that unlock India</h2>
+        <p>From JEE and NEET to CLAT, CUET, NDA and design tests — know what each one opens.</p>
+      </header>
+      <div class="exam-toolbar">
+        <div class="search-wrap">
+          <input id="examSearch" type="search" placeholder="Search an exam (e.g. NEET, CLAT, NDA, NIFT, ICAI)…" />
+        </div>
+        <div class="exam-chips" id="examChips"></div>
+      </div>
+      <div class="exam-grid" id="examGrid"></div>
+      <p id="examNoResults" class="no-results" hidden>No exams match your search.</p>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section id="careers" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Careers</span>
+        <h2>Where every path leads</h2>
+        <p>40+ verified careers with required qualification and entry-level salary range in India (₹ LPA = lakhs per annum).</p>
+      </header>
+      <div class="career-galaxy" id="careerGalaxy"></div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="section">
+    <div class="container quiz-container">
+      <header class="section-head">
+        <span class="eyebrow">Aptitude</span>
+        <h2>Find your stream in 8 questions</h2>
+        <p>Honest answers give honest results. Nothing leaves your browser.</p>
+      </header>
+      <div id="quizCard" class="quiz-card"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Frequently asked questions</h2>
+      </header>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand">
+          <span class="brand-mark">my</span>
+          <span class="brand-text">myway <small>India</small></span>
+        </div>
+        <p class="muted">An open educational guide for Indian students. Information compiled from official sources: CBSE, NTA, AICTE, UGC, MoE, NCVET, NMC, BCI, ICAI, ICSI, NIFT, NID, NDA, and recognised college admission portals (verified May 2026).</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://www.education.gov.in" target="_blank" rel="noopener">Ministry of Education</a></li>
+          <li><a href="https://www.nta.ac.in" target="_blank" rel="noopener">National Testing Agency (NTA)</a></li>
+          <li><a href="https://www.ugc.gov.in" target="_blank" rel="noopener">UGC</a></li>
+          <li><a href="https://www.aicte-india.org" target="_blank" rel="noopener">AICTE</a></li>
+          <li><a href="https://ncvet.gov.in" target="_blank" rel="noopener">NCVET (Vocational)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Disclaimer</h4>
+        <p class="muted">Eligibility, fees, exam dates and salaries change every year. Always verify on the official body's website before applying.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 myway — Built for Indian students, free forever.</div>
+      <div>Made with <span aria-label="love">❤️</span> in <svg class="in-flag" viewBox="0 0 90 60" aria-label="India" role="img"><rect width="90" height="20" fill="#FF9933"/><rect y="20" width="90" height="20" fill="#fff"/><rect y="40" width="90" height="20" fill="#138808"/><g transform="translate(45 30)" stroke="#000080" stroke-width="0.5" fill="none"><circle r="7.5" stroke-width="0.8"/><circle r="1.4" fill="#000080" stroke="none"/><g stroke-width="0.45"><line y2="-7.5"/><line y2="-7.5" transform="rotate(15)"/><line y2="-7.5" transform="rotate(30)"/><line y2="-7.5" transform="rotate(45)"/><line y2="-7.5" transform="rotate(60)"/><line y2="-7.5" transform="rotate(75)"/><line y2="-7.5" transform="rotate(90)"/><line y2="-7.5" transform="rotate(105)"/><line y2="-7.5" transform="rotate(120)"/><line y2="-7.5" transform="rotate(135)"/><line y2="-7.5" transform="rotate(150)"/><line y2="-7.5" transform="rotate(165)"/><line y2="-7.5" transform="rotate(180)"/><line y2="-7.5" transform="rotate(195)"/><line y2="-7.5" transform="rotate(210)"/><line y2="-7.5" transform="rotate(225)"/><line y2="-7.5" transform="rotate(240)"/><line y2="-7.5" transform="rotate(255)"/><line y2="-7.5" transform="rotate(270)"/><line y2="-7.5" transform="rotate(285)"/><line y2="-7.5" transform="rotate(300)"/><line y2="-7.5" transform="rotate(315)"/><line y2="-7.5" transform="rotate(330)"/><line y2="-7.5" transform="rotate(345)"/></g></g></svg> by <a href="https://bipul.in" target="_blank" rel="noopener">Bipul Raman</a></div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
