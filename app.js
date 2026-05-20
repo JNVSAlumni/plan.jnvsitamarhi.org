@@ -203,8 +203,10 @@ FAQ.forEach((f, i) => {
 
 // ---------- Modal ----------
 const modal = $("#modal");
+const modalTitle = $("#modalTitle");
 const modalBody = $("#modalBody");
-function openModal(html) {
+function openModal(title, html) {
+  modalTitle.textContent = title;
   modalBody.innerHTML = "";
   if (typeof html === "string") modalBody.innerHTML = html;
   else modalBody.appendChild(html);
@@ -225,7 +227,6 @@ function openStreamModal(id) {
   if (!s) return;
   const courses = COURSES.filter((c) => c.stream === id);
   const wrap = el("div", {},
-    el("h2", { id: "modalTitle" }, `${s.icon} ${s.name}`),
     el("p", { class: "modal-sub" }, s.tagline),
 
     el("div", { class: "modal-grid" },
@@ -272,7 +273,7 @@ function openStreamModal(id) {
         )
       : null
   );
-  openModal(wrap);
+  openModal(`${s.icon} ${s.name}`, wrap);
 }
 
 function openCourseModal(id) {
@@ -280,7 +281,6 @@ function openCourseModal(id) {
   if (!c) return;
   const stream = STREAMS.find((s) => s.id === c.stream);
   const wrap = el("div", {},
-    el("h2", { id: "modalTitle" }, c.name),
     el("p", { class: "modal-sub" }, (stream ? stream.name + " • " : "") + c.duration),
     el("p", {}, c.desc),
 
@@ -311,7 +311,7 @@ function openCourseModal(id) {
       el("div", { class: "cons" }, el("h5", {}, "Watch-outs"), el("ul", {}, ...c.cons.map((x) => el("li", {}, x))))
     )
   );
-  openModal(wrap);
+  openModal(c.name, wrap);
 }
 
 // ---------- Quiz ----------
